@@ -9,6 +9,34 @@ use File;
 
 class PetController extends Controller
 {
+    public function indexpet(){
+
+        $pets = Pet::all();
+        return response()->json([
+                'status'=>200,
+                'pets'=>$pets,
+        ]);
+
+    }
+
+    /*public function editpet($id){
+
+        $pet = Pet::find($id);
+       if($pet){
+        return response()->json([
+            'status'=>200,
+            'pet'=>$pet,
+    ]);
+       }
+       else{
+        return response()->json([
+            'status'=>404,
+            'message'=>'El Producto No Fue Encontrado',
+    ]);
+       }
+
+    }*/
+
     public function addpet(Request $request){
 
         $validator = Validator::make($request->all(),[
