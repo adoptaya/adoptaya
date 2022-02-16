@@ -18,7 +18,7 @@ class PetFactory extends Factory
             'race' => $this->faker->name(),
             'location' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'img_url' => $this->faker->image(),
+            'img_url' => 'https://loremflickr.com/320/240',
             'age' => $this->faker->numberBetween(1,999),
             'owner' => $this->faker->name(),
         ];
