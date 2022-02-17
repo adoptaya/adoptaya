@@ -21,12 +21,11 @@ class PetTest extends TestCase
 
         $response->assertStatus(200);
 
-        $petsCount = count($response['pets']);
+        $this->assertCount(10, $response['pets']);
 
-        $response->assertTrue(10 === $petsCount);
+        // $response
+        //     ->assertExactJson($pets->toArray());
 
-        // $response->assertCount(10);
-            // ->assertExactArray($pets->toArray());
     }
 
     public function test_store()
@@ -37,8 +36,8 @@ class PetTest extends TestCase
             'status' => 'status',
             'location' => 'location',
             'description' => 'description',
-            'description_abridged' => 'description_abridged',
-            'img_url' => 'tests\images\download.jpg',
+            'descriptionabridged' => 'descriptionabridged',
+            'img' => 'testimage.jpg',
             'age' => '11',
             'owner' => 'owner',
             'contact' => '999999999',
@@ -55,12 +54,13 @@ class PetTest extends TestCase
                     'status' => $data['status'],
                     'location' => $data['location'],
                     'description' => $data['description'],
-                    'description_abridged' => $data['description_abridged'],
-                    'img_url' => $data['img_url'],
+                    'descriptionabridged' => $data['descriptionabridged'],
+                    'img' => $data['img'],
                     'age' => $data['age'],
                     'owner' => $data['owner'],
                 ]
             )
+
             ->assertJson(
                 [
                     'name' => $data['name'],
@@ -68,12 +68,14 @@ class PetTest extends TestCase
                     'status' => $data['status'],
                     'location' => $data['location'],
                     'description' => $data['description'],
-                    'description_abridged' => $data['description_abridged'],
-                    'img_url' => $data['img_url'],
+                    'descriptionabridged' => $data['descriptionabridged'],
+                    'img' => $data['img'],
                     'age' => $data['age'],
                     'owner' => $data['owner'],
                     'contact' => $data['contact'],
                 ]
             );
+
     }
+
 }

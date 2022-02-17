@@ -6,9 +6,9 @@ use App\Http\Controllers\API\PetController;
 
 Route::get('/pets', [PetController::class, 'index']);
 
-Route::POST('add-pet', [PetController::class, 'store']);
+Route::post('/pets', [PetController::class, 'store']);
 
-Route::post('/pets', [PetController::class, 'add']);
+// Route::POST('add-pet', [PetController::class, 'store']);
 
 // Route::post('/pets', [PetController::class, 'add']);
 

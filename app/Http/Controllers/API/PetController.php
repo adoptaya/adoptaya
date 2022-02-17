@@ -44,13 +44,13 @@ class PetController extends Controller
 
     }*/
 
-    public function store(Request $request)
-    {
-        $pet = Pet::create($request->all());
-        return $pet;  
-    }
+    // public function store(Request $request)
+    // {
+    //     $pet = Pet::create($request->all());
+    //     return $pet;  
+    // }
 
-    public function add(Request $request)
+    public function store(Request $request)
     {
 
         $validator = Validator::make($request->all(), [
@@ -60,7 +60,7 @@ class PetController extends Controller
             'location' => 'required|max:50',
             'description' => 'required|max:500',
             'descriptionabridged' => 'required|max:100',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:5000',
+            'img' => 'required',
             'age' => 'required|max:3',
             'owner' => 'required|max:50',
             'contact' => 'required|min:9|max:9',
@@ -73,32 +73,42 @@ class PetController extends Controller
             ]);
         } else {
 
-            $pet = new Pet;
-            $pet->name = $request->input('name');
-            $pet->race = $request->input('race');
+            $pet = Pet::create($request->all());
 
-            $pet->location = $request->input('location');
-            $pet->description = $request->input('description');
+            // $pet = new Pet;
+            // $pet->name = $request->input('name');
+            // $pet->species = $request->input('species');
+            // $pet->status = $request->input('status');
 
-            $pet->age = $request->input('age');
-            $pet->owner = $request->input('owner');
+            // $pet->location = $request->input('location');
+            // $pet->description = $request->input('description');
+            // $pet->descriptionabridged = $request->input('descriptionabridged');
+            // $pet->img = $request->input('img');
 
-            if ($request->hasFile('img_url')) {
+            // $pet->age = $request->input('age');
+            // $pet->owner = $request->input('owner');
+            // $pet->contact = $request->input('contact');
 
-                $file = $request->file('img_url');
-                $extension = $file->getClientOriginalExtension();
-                $filename = time() . '.' . $extension;
-                $file->move('uploads/pet/', $filename);
-                $pet->img_url = 'uploads/pet/' . $filename;
-            }
+            // if ($request->hasFile('img')) {
 
-            $pet->status = $request->input('status') == true ? '1' : '0';
-            $pet->save();
+            //     $file = $request->file('img');
+            //     $extension = $file->getClientOriginalExtension();
+            //     $filename = time() . '.' . $extension;
+            //     $file->move('uploads/pet/', $filename);
+            //     $pet->img = 'uploads/pet/' . $filename;
+            // }
 
-            return response()->json([
-                'status' => 200,
-                'message' => 'El Animal Fue Creado',
-            ]);
+            // $pet->status = $request->input('status') == true ? '1' : '0';
+            // $pet->save();
+
+            // return response()->json([
+            //     'status' => 201,
+            //     'message' => 'El Animal Fue Creado',
+            // ]);
+
+            return $pet;  
+
         }
     }
+
 }

@@ -16,8 +16,8 @@ class CreatePetTable extends Migration
         Schema::create('pet', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('status');
             $table->string('species')->nullable();
+            $table->string('status');
             $table->string('location')->nullable();
             $table->mediumText('description')->nullable();
             $table->mediumText('descriptionabridged');
