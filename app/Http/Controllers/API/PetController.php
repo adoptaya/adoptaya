@@ -10,15 +10,19 @@ use File;
 
 class PetController extends Controller
 {
+
     public function index()
     {
 
         $pets = Pet::all();
-        return response()->json($pets, 200);
-        // return response()->json([
-        //         'status'=>200,
-        //         'pets'=>$pets,
-        // ]);
+
+        return response()->json([
+                'status'=>200,
+                'pets'=>$pets,
+        ]);
+
+        
+        // return response()->json($pets, 200);
 
     }
 
@@ -51,13 +55,15 @@ class PetController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:50',
-            'race' => 'required|max:50',
+            'species' => 'required|max:50',
+            'status' => 'required|max:50',
             'location' => 'required|max:50',
             'description' => 'required|max:500',
-            'img_url' => 'required|image|mimes:jpeg,png,jpg|max:5000',
+            'descriptionabridged' => 'required|max:100',
+            'img' => 'required|image|mimes:jpeg,png,jpg|max:5000',
             'age' => 'required|max:3',
             'owner' => 'required|max:50',
-
+            'contact' => 'required|min:9|max:9',
         ]);
 
         if ($validator->fails()) {

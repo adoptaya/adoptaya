@@ -11,12 +11,15 @@ class Pet extends Model
     protected $table = 'pet';
     protected $fillable = [
         'name',
-        'race',
+        'species',
+        'status',
         'location',
         'description',
-        'img_url',
+        'descriptionabridged',
+        'img',
         'age',
         'owner',
+        'contact',
     ];
 
 }

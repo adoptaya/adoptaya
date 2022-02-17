@@ -15,12 +15,15 @@ class PetFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'race' => $this->faker->name(),
+            'species' => $this->faker->name(),
+            'status' => $this->faker->name(),
             'location' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'img_url' => 'https://loremflickr.com/320/240',
+            'descriptionabridged' => $this->faker->name(),
+            'img' => 'https://loremflickr.com/320/240',
             'age' => $this->faker->numberBetween(1,999),
             'owner' => $this->faker->name(),
+            'contact' => $this->faker->numberBetween(100000000, 999999999)
         ];
     }
 }
