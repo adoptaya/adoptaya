@@ -34,9 +34,9 @@ class PetController extends Controller
             'description' => 'required|max:500',
             'descriptionabridged' => 'required|max:100',
             'img' => 'required',
-            'age' => 'required|max:3',
+            'age' => 'required|max:50',
             'owner' => 'required|max:50',
-            'contact' => 'required|min:9|max:9',
+            'contact' => 'required|min:9|max:14',
         ]);
 
         if ($validator->fails()) {

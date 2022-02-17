@@ -35,9 +35,9 @@ class PetTest extends TestCase
             'description' => 'description',
             'descriptionabridged' => 'descriptionabridged',
             'img' => 'testimage.jpg',
-            'age' => '11',
+            'age' => '11 años',
             'owner' => 'owner',
-            'contact' => '999999999',
+            'contact' => '+34999999999',
         ];
 
         $response = $this->json('POST', '/api/pets', $data);

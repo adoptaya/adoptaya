@@ -22,9 +22,9 @@ class CreatePetTable extends Migration
             $table->mediumText('description')->nullable();
             $table->mediumText('descriptionabridged');
             $table->string('img')->nullable();
-            $table->integer('age');
+            $table->string('age');
             $table->string('owner');
-            $table->integer('contact');
+            $table->string('contact');
             $table->timestamps();
         });
     }
