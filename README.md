@@ -9,7 +9,7 @@
 
 # AdoptaYa 
 
-- Application done to connnect people or organizations who need to find a home to any animal they might have found or can no longer support.
+- Application done to connnect people or organizations who need to find a home to any animal they might have found or can no longer support. This is the backend half of the proyect.
 
 ## Installation
 
