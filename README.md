@@ -11,6 +11,20 @@
 
 - Application done to connnect people or organizations who need to find a home to any animal they might have found or can no longer support.
 
+## Installation
+
+- npm install && composer install
+
+## Server
+
+- php artisan serve
+
+## Testing
+
+- php artisan test
+or
+- vendor/bin/phpunit
+
 ## Stack
 
 - Laravel
