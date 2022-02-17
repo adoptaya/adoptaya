@@ -23,9 +23,6 @@ class PetTest extends TestCase
 
         $this->assertCount(10, $response['pets']);
 
-        // $response
-        //     ->assertExactJson($pets->toArray());
-
     }
 
     public function test_store()
