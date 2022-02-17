@@ -9,23 +9,29 @@
 
 # AdoptaYa 
 
-- Application done to connnect people or organizations who need to find a home to any animal they might have found or can no longer support. This is the backend half of the proyect.
+>> Application done to connnect people or organizations who need to find a home to any animal they might have found or can no longer support. This is the backend half of the proyect.
 
 ## Installation
 
-- npm install && composer install
+>> npm install && composer install
 
 ## Server
 
-- php artisan serve
+>> php artisan serve
 
 ## Testing
 
-- php artisan test
+>> php artisan test
 
 or
 
-- vendor/bin/phpunit
+>> vendor/bin/phpunit
+
+## .env
+
+- To configure the .env, you need to copy your .env.example, change it's name to .env. Then you have to input the name of your database in it's DB_DATABASE= input, finally you have to run:
+
+>> php artisan key:generate
 
 ## Stack
 
