@@ -22,7 +22,9 @@
 ## Testing
 
 - php artisan test
+
 or
+
 - vendor/bin/phpunit
 
 ## Stack
